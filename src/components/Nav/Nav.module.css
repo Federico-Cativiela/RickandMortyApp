@@ -1,0 +1,8 @@
+.nav {
+    background-color: grey;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 15px 0px 0px 15p;
+    display: flex;
+    justify-content: flex-end;
+}
