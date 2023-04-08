@@ -6,16 +6,19 @@ export default function Cards({characters, onClose}) {
    <div className={Style.container}>
       
       {
-      characters.map(({name,species, gender, image,id})=>{
+      characters.map(({id,name,species, gender,status,origin,image})=>{
          return(
 
             <Card
+            key = {id}
+            id = {id}
             name = {name}
             species={species}
             gender={gender}
+            status={status}
+            origin={origin.name}
             image={image}
             onClose = {()=>onClose(id)}
-            id = {id}
             />
          )
       })}

@@ -5,7 +5,6 @@ export default function SearchBar({onSearch}) {
    const [idEstado, setIdEstado] = useState (""); 
    const handleOnChange  = (event)=>{
       console.log(event.target.value);
-      
              setIdEstado (event.target.value);
 
 
