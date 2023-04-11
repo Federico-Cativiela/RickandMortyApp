@@ -29,11 +29,11 @@ export default function Detail (){
 
 return(
     <div>
-        <h1>Nombre:{character?.name}</h1>
-        <h3>Status:{character?.status}</h3>
-        <h3>Specie:{character?.specie}</h3>
-        <h3>Gender:{character?.gender}</h3>
-        <h3>Origin:{character?.origin?.name}</h3>
+        <h1 style={{color: 'white'}}>Nombre:{character?.name}</h1>
+        <h3 style={{color: 'white'}}>Status:{character?.status}</h3>
+        <h3 style={{color: 'white'}}>Specie:{character?.specie}</h3>
+        <h3 style={{color: 'white'}}>Gender:{character?.gender}</h3>
+        <h3 style={{color: 'white'}}>Origin:{character?.origin?.name}</h3>
         <img src={character?.image} alt={character?.name} />
  
     </div>

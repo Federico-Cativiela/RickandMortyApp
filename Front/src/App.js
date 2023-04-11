@@ -2,17 +2,37 @@
 import './App.css'
 import Cards from './components/Cards/Cards'
 import Nav from './components/Nav/Nav'
-import { useState } from 'react'
-import {Route, Routes} from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import {Route, Routes, useLocation, useNavigate} from 'react-router-dom'
 import About from './components/About/About'
 import Detail from './components/Detail/Detail'
+import Form from './components/Form/Form'
 
 const URL_BASE = `https://be-a-rym.up.railway.app/api/character`;
 const API_KEY = '811d334a8722.483d2555e17dc79cecd5';
 
+
 function App () {
   
-  const [characters, setCharacters] = useState ([]); 
+  const [characters, setCharacters] = useState ([]);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [acces, setAcces] = useState(false); 
+
+  const username = "federicocativiela@hotmail.com";
+  const password = "123asd";
+
+  const login = (userData) => {
+   if(userData.username === username && userData.password === password){
+   setAcces(true)
+   navigate('/home');
+   }
+  }
+
+  useEffect(() => {
+    !acces && navigate('/')
+  },[acces])
+  
 
   const onSearch = (character)=>{
     fetch(`${URL_BASE}/${character}?key=${API_KEY}`)
@@ -36,7 +56,8 @@ function App () {
   return (
 
     <div className='App' style={{ padding: '25px' }}>
-      <Nav onSearch = {onSearch}/>
+      {location.pathname === '/' ? <Form login={login}/> : <Nav onSearch = {onSearch}/>}
+      
       <Routes>
         <Route path='about' element= {<About/>}/>
         <Route path='home' element= {<Cards characters={characters} onClose = {onClose} />}/>

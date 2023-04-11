@@ -10,6 +10,7 @@ const Nav = ({onSearch})=>{
 
         <nav className={style.nav}>
                <SearchBar onSearch={onSearch}/>
+               <Link to="/" className={style.about} style={{ color:'white'}}>LOGOUT</Link>
               <Link to="/about" >About</Link>
               <Link to="/home" >Home</Link>
         </nav>
