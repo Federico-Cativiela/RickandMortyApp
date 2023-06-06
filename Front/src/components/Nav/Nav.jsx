@@ -13,6 +13,7 @@ const Nav = ({onSearch})=>{
                <Link to="/" className={style.about} style={{ color:'white'}}>LOGOUT</Link>
               <Link to="/about" >About</Link>
               <Link to="/home" >Home</Link>
+              <Link to="/favorites" >Favorites</Link>
         </nav>
     )
 }

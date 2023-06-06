@@ -1,11 +1,10 @@
 import { useState } from "react"
 import { useParams } from "react-router-dom"
 import { useEffect } from "react"
+import React from "react";
 
 const URL_BASE = `https://be-a-rym.up.railway.app/api/character`;
 const API_KEY = '811d334a8722.483d2555e17dc79cecd5';
-
-
 
 export default function Detail (){
     const {detailId} = useParams()
@@ -29,11 +28,11 @@ export default function Detail (){
 
 return(
     <div>
-        <h1 style={{color: 'white'}}>Nombre:{character?.name}</h1>
-        <h3 style={{color: 'white'}}>Status:{character?.status}</h3>
-        <h3 style={{color: 'white'}}>Specie:{character?.specie}</h3>
-        <h3 style={{color: 'white'}}>Gender:{character?.gender}</h3>
-        <h3 style={{color: 'white'}}>Origin:{character?.origin?.name}</h3>
+        <h1>Nombre:{character?.name}</h1>
+        <h3>Status:{character?.status}</h3>
+        <h3>Specie:{character?.specie}</h3>
+        <h3>Gender:{character?.gender}</h3>
+        <h3>Origin:{character?.origin?.name}</h3>
         <img src={character?.image} alt={character?.name} />
  
     </div>

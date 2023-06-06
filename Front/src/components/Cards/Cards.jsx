@@ -1,5 +1,6 @@
 import Card from '../Card/Card';
 import Style from './Cards.module.css'
+import React from 'react';
 
 export default function Cards({characters, onClose}) {
    return( 
